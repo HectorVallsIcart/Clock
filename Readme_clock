@@ -1,0 +1,64 @@
+Clock Function – Python Project
+
+<<Description>>
+This project contains a simple Python function that receives a time string in the format "HH:MM:SS" and returns a dictionary with:
+the hour, minute, and second as integers a message depending on the time of day a descriptive text showing the time functionality
+
+The clock(num) function:
+-Splits the input string into hours, minutes, and seconds
+-Converts each part into an integer
+-Determines a message based on the hour:
+1–7 → It's still time to sleep
+8–13 → Good morning
+14–20 → Good afternoon
+21–24 / 0 → Good night
+-Returns a dictionary containing all the processed information
+
+<<Code Example:>>
+def clock(num):
+    # Split the input string "HH:MM:SS"
+    hour_text, minute_text, second_text = num.split(":")
+
+    # Convert each part to integer
+    hour = int(hour_text)
+    minute = int(minute_text)
+    second = int(second_text)
+
+    # Determine message based on time range
+    if 1 <= hour < 8:
+        sms = "It's still time to sleep"
+    elif 8 <= hour < 14:
+        sms = "Good morning"
+    elif 14 <= hour < 21:
+        sms = "Good afternoon"
+    else:
+        sms = "Good night"
+
+    return {
+        "hour": hour,
+        "minute": minute,
+        "second": second,
+        "sms": sms,
+        "text": f"It is {hour}:{minute}:{second}"
+    }
+
+
+<<Usage Example:>>
+------------>         print(clock("09:30:15"))
+
+It will retur as an Output:
+
+{
+    'hour': 9,
+    'minute': 30,
+    'second': 15,
+    'sms': 'Good morning',
+    'text': 'It is 9:30:15'
+}
+
+<<Project Purpose>>
+This small project is useful for practicing:
+-string manipulation
+-type conversion
+-conditional logic
+-returning structured data with dictionaries
