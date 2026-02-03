@@ -1,21 +1,21 @@
 def clock(num):
-    # Split the input string "HH:MM:SS"
+                                                                         # Split the input string "HH:MM:SS"
     hour_text, minute_text, second_text = num.split(":")
 
-    # Convert each part to integer
+                                                                         # Convert each part to integer
     hour = int(hour_text)
     minute = int(minute_text)
     second = int(second_text)
 
-    # Determine message based on time range
+                                                                         # Determine message based on time range
     if 1 <= hour < 8:
-        sms = "It's still time to sleep"
+        sms = "It's still time to sleep :)"
     elif 8 <= hour < 14:
-        sms = "Good morning"
+        sms = "Good morning :P"
     elif 14 <= hour < 21:
-        sms = "Good afternoon"
+        sms = "Good afternoon  ^^"
     else:
-        sms = "Good night"
+        sms = "Good night  zZzZz"
 
     return {
         "hour": hour,
@@ -24,3 +24,4 @@ def clock(num):
         "sms": sms,
         "text": f"It is {hour}:{minute}:{second}"
     }
+
